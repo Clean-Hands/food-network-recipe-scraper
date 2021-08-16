@@ -35,7 +35,7 @@ def downloadFile(title, URL, letter, letterNum):
 
     download = requests.get(f"http:{URL}")
 
-    filename = f".\{letter[letterNum]}\{title}.html"
+    filename = f".\Downloads\{letter[letterNum]}\{title}.html"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     with open(filename, "wb") as f:
@@ -46,7 +46,7 @@ def downloadFile(title, URL, letter, letterNum):
 
 while letterNum <= len(letter):
     letterNum += 1
-    files = glob.glob(f".\{letter[letterNum]}\*.html")
+    files = glob.glob(f".\Downloads\{letter[letterNum]}\*.html")
     fileNames = []
     for file in files:
         posArray = []
