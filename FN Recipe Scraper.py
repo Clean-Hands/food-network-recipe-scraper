@@ -55,7 +55,7 @@ while letterNum <= len(letter):
                 pos += 1
                 posArray.append(pos)
         file = file[posArray[-1]:-5]
-        fileNames.append(file)
+        fileNames.append(file.lower())
     response = requests.get(f"https://www.foodnetwork.com/recipes/recipes-a-z/{letter[letterNum]}/p/1")
     soup = BeautifulSoup(response.content, "html.parser")
 
@@ -85,7 +85,7 @@ while letterNum <= len(letter):
                     duplicates = 0
                     lastTitle = title.lower()
 
-                if title not in fileNames:
+                if title.lower() not in fileNames:
 
                     number += 1
 
