@@ -59,7 +59,7 @@ while letterNum <= len(letter):
     response = requests.get(f"https://www.foodnetwork.com/recipes/recipes-a-z/{letter[letterNum]}/p/1")
     soup = BeautifulSoup(response.content, "html.parser")
 
-    maxPage = soup.select(" div > section > ul > li > a")
+    maxPage = soup.select("div > section > ul > li > a")
     maxPage = int(maxPage[-2].string)
 
     page = 1
@@ -133,7 +133,6 @@ while letterNum <= len(letter):
                             t.join()
                 # else:
                     # print(f"skipped: {title}")
-
 
         page += 1
 
